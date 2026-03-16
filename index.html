@@ -39,44 +39,231 @@
 			</div>
 		</div>
 		
-		<!-- About Page Section - Fixed namecard structure -->
-		<div class="aboutPage section" id="aboutPage-js">
-			<div class="container">
-				<div class="row align-items-center">
-					<div class="col-md-5">
-						<div class="imgcard">
-							<img src="img/profilepic1.jpeg" alt="Engineer Collins Akayeti" class="img-fluid rounded-circle" onerror="this.src='https://via.placeholder.com/300x300?text=Profile+Image'">
-						</div>
-					</div>
-					<div class="col-md-7">
-						<div class="namecard">
-							<h1>Engineer Collins Akayeti</h1>
-							
-							<h2>What We Do As A Company</h2>
-							<nav class="services-nav">
-								<ul>
-									<li><i class="fas fa-network-wired"></i> Computer Networking</li>
-									<li><i class="fas fa-phone-alt"></i> Inter-coms & Telecommunication</li>
-									<li><i class="fas fa-video"></i> CCTV Surveillance Installation</li>
-									<li><i class="fas fa-solar-panel"></i> Solar Generator Setup</li>
-									<li><i class="fas fa-shield-alt"></i> Security Fencing & Electric Fencing</li>
-									<li><i class="fas fa-fire-extinguisher"></i> Fire Alarm Systems</li>
-									<li><i class="fas fa-code"></i> Website Development</li>
-								</ul>
-							</nav>
-							
-							<div class="tech-stack">
-								<span><i class="fab fa-html5" title="HTML5"></i></span>
-								<span><i class="fab fa-css3-alt" title="CSS3"></i></span>
-								<span><i class="fab fa-js" title="JavaScript"></i></span>
-								<span><i class="fab fa-java" title="Java"></i></span>
-								<span><i class="fab fa-android" title="Android"></i></span>
-							</div>
-						</div>
+<!-- About Page Section - Fixed namecard structure with proper text sizing -->
+<div class="aboutPage section" id="aboutPage-js">
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-md-5">
+				<div class="imgcard">
+					<img src="img/profilepic1.jpeg" alt="Engineer Collins Akayeti" class="img-fluid rounded-circle" onerror="this.src='https://via.placeholder.com/300x300?text=Profile+Image'">
+				</div>
+			</div>
+			<div class="col-md-7">
+				<div class="namecard">
+					<h1>Engineer Collins Akayeti</h1>
+					
+					<h2>What We Do As A Company</h2>
+					<nav class="services-nav">
+						<ul>
+							<li><i class="fas fa-network-wired"></i> <span>Computer Networking</span></li>
+							<li><i class="fas fa-phone-alt"></i> <span>Inter-coms & Telecommunication</span></li>
+							<li><i class="fas fa-video"></i> <span>CCTV Surveillance Installation</span></li>
+							<li><i class="fas fa-solar-panel"></i> <span>Solar Generator Setup</span></li>
+							<li><i class="fas fa-shield-alt"></i> <span>Security Fencing & Electric Fencing</span></li>
+							<li><i class="fas fa-fire-extinguisher"></i> <span>Fire Alarm Systems</span></li>
+							<li><i class="fas fa-code"></i> <span>Website Development</span></li>
+						</ul>
+					</nav>
+					
+					<div class="tech-stack">
+						<span><i class="fab fa-html5" title="HTML5"></i></span>
+						<span><i class="fab fa-css3-alt" title="CSS3"></i></span>
+						<span><i class="fab fa-js" title="JavaScript"></i></span>
+						<span><i class="fab fa-java" title="Java"></i></span>
+						<span><i class="fab fa-android" title="Android"></i></span>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
+</div>
+
+<style>
+/* Updated CSS for namecard to fix text overflow */
+.namecard {
+	background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(10px);
+	border-radius: 15px;
+	padding: 20px;
+	color: #fff;
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	margin: 10px 0;
+	max-height: 600px;
+	overflow-y: auto;
+}
+
+/* Custom scrollbar for namecard */
+.namecard::-webkit-scrollbar {
+	width: 5px;
+}
+
+.namecard::-webkit-scrollbar-track {
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 10px;
+}
+
+.namecard::-webkit-scrollbar-thumb {
+	background: #ffd700;
+	border-radius: 10px;
+}
+
+.namecard h1 {
+	font-size: 1.6em;
+	margin-bottom: 12px;
+	color: #fff;
+	border-bottom: 2px solid #ffd700;
+	padding-bottom: 8px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.namecard h2 {
+	font-size: 1.1em;
+	margin-bottom: 10px;
+	color: #ffd700;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.services-nav ul {
+	list-style: none;
+	padding: 0;
+	margin-bottom: 15px;
+	max-height: 280px;
+	overflow-y: auto;
+}
+
+/* Scrollbar for services list */
+.services-nav ul::-webkit-scrollbar {
+	width: 3px;
+}
+
+.services-nav ul::-webkit-scrollbar-track {
+	background: rgba(255, 255, 255, 0.1);
+}
+
+.services-nav ul::-webkit-scrollbar-thumb {
+	background: #ffd700;
+}
+
+.services-nav li {
+	padding: 6px 0;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	display: flex;
+	align-items: center;
+	font-size: 0.9em;
+}
+
+.services-nav li i {
+	margin-right: 10px;
+	color: #ffd700;
+	width: 20px;
+	font-size: 1em;
+	flex-shrink: 0;
+}
+
+.services-nav li span {
+	flex: 1;
+	word-break: break-word;
+	line-height: 1.3;
+}
+
+.tech-stack {
+	margin-top: 15px;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.tech-stack span {
+	display: inline-block;
+	font-size: 1.3em;
+}
+
+.tech-stack span i {
+	color: #ffd700;
+	transition: transform 0.3s;
+}
+
+.tech-stack span i:hover {
+	transform: scale(1.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+	.namecard {
+		padding: 15px;
+		max-height: 500px;
+	}
+	
+	.namecard h1 {
+		font-size: 1.4em;
+	}
+	
+	.namecard h2 {
+		font-size: 1em;
+	}
+	
+	.services-nav li {
+		font-size: 0.85em;
+		padding: 5px 0;
+	}
+	
+	.tech-stack span {
+		font-size: 1.1em;
+	}
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+	.namecard {
+		padding: 12px;
+		max-height: 450px;
+	}
+	
+	.namecard h1 {
+		font-size: 1.2em;
+	}
+	
+	.services-nav ul {
+		max-height: 250px;
+	}
+	
+	.services-nav li {
+		font-size: 0.8em;
+	}
+}
+
+/* Make sure the image card doesn't overflow */
+.imgcard {
+	border-radius: 50%;
+	overflow: hidden;
+	box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+	max-width: 250px;
+	margin: 0 auto;
+}
+
+.imgcard img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+/* Adjust column spacing */
+.row.align-items-center {
+	margin: 0;
+}
+
+.col-md-5, .col-md-7 {
+	padding: 10px;
+}
+</style>
+
+
 		
 		<!-- Portfolio Page Section -->
 		<div class="portfolioPage section" id="profilePage-js">
@@ -128,7 +315,7 @@
 			</div>
 		</div>
 	</div>
-
+<!-- 
 
 	<style>
 		/* Quick fixes for namecard - move this to profile.css later */
@@ -331,6 +518,6 @@
 				}, 2000);
 			});
 		}
-	</script>
+	</script> 
 </body>
 </html>
