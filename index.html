@@ -1,523 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="HandheldFriendly" content="true">
-	<title>Fortress Digital Technology</title>
-	
-	<!-- Fix: Use HTTPS for all external resources -->
-	<link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-	
-	<!-- Your local CSS files (ensure these exist) -->
-	<link rel="stylesheet" href="css/profile.css">
-	<link rel="stylesheet" href="css/particles.css">
-	
-	<!-- Scripts in correct order -->
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Fortress Digital Technology</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700&display=swap" rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<link rel="stylesheet" href="css/profile.css">
+<link rel="stylesheet" href="css/particles.css">
+
+<!-- JS -->
+<script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
 </head>
+
 <body class="darkMode">
-	<header class="header">Fortress Digital Technology</header>
-	
-	<div id="fullpage">
-		<!-- Landing Page Section -->
-		<div class="landingPage section" id="landingPage-js">
-			<div class="mainHeading" id="mainHeading">
-				Let's Make Technology Open Source
-			</div>
-			<div class="subHeading" id="subHeading">
-				Innovative Solutions for Modern Business
-			</div>
-		</div>
-		
-<!-- About Page Section - Fixed namecard structure with proper text sizing -->
-<div class="aboutPage section" id="aboutPage-js">
-	<div class="container">
-		<div class="row align-items-center">
-			<div class="col-md-5">
-				<div class="imgcard">
-					<img src="img/profilepic1.jpeg" alt="Engineer Collins Akayeti" class="img-fluid rounded-circle" onerror="this.src='https://via.placeholder.com/300x300?text=Profile+Image'">
-				</div>
-			</div>
-			<div class="col-md-7">
-				<div class="namecard">
-					<h1>Engineer Collins Akayeti</h1>
-					
-					<h2>What We Do As A Company</h2>
-					<nav class="services-nav">
-						<ul>
-							<li><i class="fas fa-network-wired"></i> <span>Computer Networking</span></li>
-							<li><i class="fas fa-phone-alt"></i> <span>Inter-coms & Telecommunication</span></li>
-							<li><i class="fas fa-video"></i> <span>CCTV Surveillance Installation</span></li>
-							<li><i class="fas fa-solar-panel"></i> <span>Solar Generator Setup</span></li>
-							<li><i class="fas fa-shield-alt"></i> <span>Security Fencing & Electric Fencing</span></li>
-							<li><i class="fas fa-fire-extinguisher"></i> <span>Fire Alarm Systems</span></li>
-							<li><i class="fas fa-code"></i> <span>Website Development</span></li>
-						</ul>
-					</nav>
-					
-					<div class="tech-stack">
-						<span><i class="fab fa-html5" title="HTML5"></i></span>
-						<span><i class="fab fa-css3-alt" title="CSS3"></i></span>
-						<span><i class="fab fa-js" title="JavaScript"></i></span>
-						<span><i class="fab fa-java" title="Java"></i></span>
-						<span><i class="fab fa-android" title="Android"></i></span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+
+<header class="header">
+Fortress Digital Technology
+</header>
+
+<div id="fullpage">
+
+<!-- Landing -->
+<div class="section landingPage">
+<div class="mainHeading">Let's Make Technology Open Source</div>
+<div class="subHeading">Innovative Solutions for Modern Business</div>
 </div>
 
-<style>
-/* Updated CSS for namecard to fix text overflow */
-.namecard {
-	background: rgba(255, 255, 255, 0.1);
-	backdrop-filter: blur(10px);
-	border-radius: 15px;
-	padding: 20px;
-	color: #fff;
-	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-	border: 1px solid rgba(255, 255, 255, 0.1);
-	margin: 10px 0;
-	max-height: 600px;
-	overflow-y: auto;
+<!-- About -->
+<div class="section aboutPage">
+<div class="container">
+
+<div class="row align-items-center">
+
+<div class="col-md-5 text-center">
+<div class="imgcard">
+<img src="img/profilepic1.jpeg"
+alt="Engineer Collins Akayeti"
+class="img-fluid rounded-circle"
+onerror="this.src='https://via.placeholder.com/300'">
+</div>
+</div>
+
+<div class="col-md-7">
+<div class="namecard">
+
+<h1>Engineer Collins Akayeti</h1>
+
+<h2>What We Do</h2>
+
+<ul class="services-nav">
+
+<li><i class="fas fa-network-wired"></i> Computer Networking</li>
+<li><i class="fas fa-phone-alt"></i> Intercoms & Telecommunication</li>
+<li><i class="fas fa-video"></i> CCTV Installation</li>
+<li><i class="fas fa-solar-panel"></i> Solar Generator Setup</li>
+<li><i class="fas fa-shield-alt"></i> Electric Security Fencing</li>
+<li><i class="fas fa-fire-extinguisher"></i> Fire Alarm Systems</li>
+<li><i class="fas fa-code"></i> Website Development</li>
+
+</ul>
+
+<div class="tech-stack">
+<i class="fab fa-html5"></i>
+<i class="fab fa-css3-alt"></i>
+<i class="fab fa-js"></i>
+<i class="fab fa-java"></i>
+<i class="fab fa-android"></i>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- Portfolio -->
+<div class="section portfolioPage">
+
+<div class="container">
+
+<h2 class="section-title">Our Portfolio</h2>
+
+<div class="row">
+
+<div class="col-md-6">
+<div class="subdata">Project 1</div>
+</div>
+
+<div class="col-md-6">
+<div class="subdata">Project 2</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+<!-- Contact -->
+<div class="section contactPage">
+
+<div class="container">
+
+<div class="row">
+
+<div class="col-md-6">
+
+<form class="contactForm">
+
+<h3>Send us a message</h3>
+
+<input type="text" id="name" placeholder="Your Name" required>
+
+<input type="email" id="email" placeholder="Your Email" required>
+
+<textarea id="message" rows="4" placeholder="Your message..." required></textarea>
+
+<button type="submit">
+<i class="fas fa-paper-plane"></i> Send
+</button>
+
+</form>
+
+</div>
+
+<div class="col-md-6">
+
+<div class="socialLinks">
+
+<h3>Contact Information</h3>
+
+<p>
+<i class="fas fa-envelope"></i>
+<span id="mailid">3collinsbrown7723@gmail.com</span>
+</p>
+
+<button onclick="copyEmail()" class="btn btn-warning btn-sm">
+Copy Email
+</button>
+
+<h4 class="mt-3">Social Media</h4>
+
+<div class="social-icons">
+
+<a href="#" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+<a href="#" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+<a href="#" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+<a href="#" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- JS -->
+<script>
+
+document.addEventListener("DOMContentLoaded", function(){
+
+if (typeof $.fn.fullpage !== "undefined") {
+
+$('#fullpage').fullpage({
+anchors: ['home','about','portfolio','contact'],
+navigation: true,
+navigationPosition: 'right',
+responsiveWidth: 768
+});
+
 }
 
-/* Custom scrollbar for namecard */
-.namecard::-webkit-scrollbar {
-	width: 5px;
+});
+
+function copyEmail(){
+
+const email = document.getElementById("mailid").innerText;
+
+navigator.clipboard.writeText(email).then(()=>{
+alert("Email copied!");
+});
+
 }
 
-.namecard::-webkit-scrollbar-track {
-	background: rgba(255, 255, 255, 0.1);
-	border-radius: 10px;
-}
+</script>
 
-.namecard::-webkit-scrollbar-thumb {
-	background: #ffd700;
-	border-radius: 10px;
-}
-
-.namecard h1 {
-	font-size: 1.6em;
-	margin-bottom: 12px;
-	color: #fff;
-	border-bottom: 2px solid #ffd700;
-	padding-bottom: 8px;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-
-.namecard h2 {
-	font-size: 1.1em;
-	margin-bottom: 10px;
-	color: #ffd700;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-}
-
-.services-nav ul {
-	list-style: none;
-	padding: 0;
-	margin-bottom: 15px;
-	max-height: 280px;
-	overflow-y: auto;
-}
-
-/* Scrollbar for services list */
-.services-nav ul::-webkit-scrollbar {
-	width: 3px;
-}
-
-.services-nav ul::-webkit-scrollbar-track {
-	background: rgba(255, 255, 255, 0.1);
-}
-
-.services-nav ul::-webkit-scrollbar-thumb {
-	background: #ffd700;
-}
-
-.services-nav li {
-	padding: 6px 0;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-	display: flex;
-	align-items: center;
-	font-size: 0.9em;
-}
-
-.services-nav li i {
-	margin-right: 10px;
-	color: #ffd700;
-	width: 20px;
-	font-size: 1em;
-	flex-shrink: 0;
-}
-
-.services-nav li span {
-	flex: 1;
-	word-break: break-word;
-	line-height: 1.3;
-}
-
-.tech-stack {
-	margin-top: 15px;
-	text-align: center;
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-	gap: 10px;
-}
-
-.tech-stack span {
-	display: inline-block;
-	font-size: 1.3em;
-}
-
-.tech-stack span i {
-	color: #ffd700;
-	transition: transform 0.3s;
-}
-
-.tech-stack span i:hover {
-	transform: scale(1.2);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-	.namecard {
-		padding: 15px;
-		max-height: 500px;
-	}
-	
-	.namecard h1 {
-		font-size: 1.4em;
-	}
-	
-	.namecard h2 {
-		font-size: 1em;
-	}
-	
-	.services-nav li {
-		font-size: 0.85em;
-		padding: 5px 0;
-	}
-	
-	.tech-stack span {
-		font-size: 1.1em;
-	}
-}
-
-/* For very small screens */
-@media (max-width: 480px) {
-	.namecard {
-		padding: 12px;
-		max-height: 450px;
-	}
-	
-	.namecard h1 {
-		font-size: 1.2em;
-	}
-	
-	.services-nav ul {
-		max-height: 250px;
-	}
-	
-	.services-nav li {
-		font-size: 0.8em;
-	}
-}
-
-/* Make sure the image card doesn't overflow */
-.imgcard {
-	border-radius: 50%;
-	overflow: hidden;
-	box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
-	max-width: 250px;
-	margin: 0 auto;
-}
-
-.imgcard img {
-	width: 100%;
-	height: auto;
-	display: block;
-}
-
-/* Adjust column spacing */
-.row.align-items-center {
-	margin: 0;
-}
-
-.col-md-5, .col-md-7 {
-	padding: 10px;
-}
-</style>
-
-
-		
-		<!-- Portfolio Page Section -->
-		<div class="portfolioPage section" id="profilePage-js">
-			<div class="container">
-				<h2 class="section-title">Our Portfolio</h2>
-				<div class="row">
-					<div class="col-md-6">
-						<div class="subdata slide">Project 1</div>
-					</div>
-					<div class="col-md-6">
-						<div class="subdata slide">Project 2</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		<!-- Contact Page Section -->
-		<div class="contactPage section" id="contactPage-js">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6">
-						<form class="contactForm">
-							<h3>Send us a message</h3>
-							<input type="text" name="name" id="name" placeholder="Your Name" required>
-							<input type="email" name="email" id="email" placeholder="Your Email" required>
-							<textarea name="message" id="message" placeholder="Your message here..." rows="4" required></textarea>
-							<button type="submit"><i class="fas fa-paper-plane"></i> Send</button>
-						</form>
-					</div>
-					<div class="col-md-6">
-						<div class="socialLinks">
-							<h3>Contact Information</h3>
-							<p><i class="fas fa-envelope"></i> Email:</p>
-							<p onclick="copyToClipboard('#mailid')" id="copymail" class="copyable">
-								<span id="mailid">3collinsbrown7723@gmail.com</span><br>
-								<small id="copymsg">Click to copy</small>
-							</p>
-							
-							<p><i class="fas fa-share-alt"></i> Find us on Social Media:</p>
-							<div class="social-icons" id="socialLinks">
-								<a href="https://www.linkedin.com/in/rpanwar63" target="_blank"><i class="fab fa-linkedin"></i></a>
-								<a href="https://twitter.com/rishabh_panwar" target="_blank"><i class="fab fa-twitter"></i></a>
-								<a href="https://www.facebook.com/r.panwar63" target="_blank"><i class="fab fa-facebook-f"></i></a>
-								<a href="https://www.instagram.com/r.panwar63" target="_blank"><i class="fab fa-instagram"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-<!-- 
-
-	<style>
-		/* Quick fixes for namecard - move this to profile.css later */
-		.namecard {
-			background: rgba(255, 255, 255, 0.1);
-			backdrop-filter: blur(10px);
-			border-radius: 15px;
-			padding: 30px;
-			color: #fff;
-			box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-			border: 1px solid rgba(255, 255, 255, 0.1);
-			margin: 20px 0;
-		}
-		
-		.namecard h1 {
-			font-size: 2.2em;
-			margin-bottom: 20px;
-			color: #fff;
-			border-bottom: 2px solid #ffd700;
-			padding-bottom: 10px;
-		}
-		
-		.namecard h2 {
-			font-size: 1.3em;
-			margin-bottom: 15px;
-			color: #ffd700;
-		}
-		
-		.services-nav ul {
-			list-style: none;
-			padding: 0;
-			margin-bottom: 20px;
-		}
-		
-		.services-nav li {
-			padding: 8px 0;
-			border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-		}
-		
-		.services-nav li i {
-			margin-right: 10px;
-			color: #ffd700;
-			width: 25px;
-		}
-		
-		.tech-stack {
-			margin-top: 20px;
-			text-align: center;
-		}
-		
-		.tech-stack span {
-			display: inline-block;
-			margin: 0 10px;
-			font-size: 2em;
-		}
-		
-		.tech-stack span i {
-			color: #ffd700;
-			transition: transform 0.3s;
-		}
-		
-		.tech-stack span i:hover {
-			transform: scale(1.2);
-		}
-		
-		/* Fix for header */
-		.header {
-			position: fixed;
-			top: 0;
-			left: 0;
-			right: 0;
-			z-index: 1000;
-			background: rgba(0, 0, 0, 0.8);
-			color: #ffd700;
-			padding: 15px 30px;
-			font-size: 1.5em;
-			font-weight: bold;
-		}
-		
-		/* Fix for imgcard */
-		.imgcard {
-			border-radius: 50%;
-			overflow: hidden;
-			box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
-			max-width: 300px;
-			margin: 0 auto;
-		}
-		
-		.imgcard img {
-			width: 100%;
-			height: auto;
-			display: block;
-		}
-		
-		/* Contact form styling */
-		.contactForm {
-			background: rgba(255, 255, 255, 0.1);
-			backdrop-filter: blur(10px);
-			padding: 30px;
-			border-radius: 15px;
-		}
-		
-		.contactForm input,
-		.contactForm textarea {
-			width: 100%;
-			padding: 12px;
-			margin-bottom: 15px;
-			border: none;
-			border-radius: 5px;
-			background: rgba(255, 255, 255, 0.2);
-			color: #fff;
-		}
-		
-		.contactForm button {
-			background: #ffd700;
-			color: #000;
-			padding: 12px 30px;
-			border: none;
-			border-radius: 5px;
-			cursor: pointer;
-			transition: background 0.3s;
-		}
-		
-		.contactForm button:hover {
-			background: #ffed4a;
-		}
-		
-		.socialLinks {
-			background: rgba(255, 255, 255, 0.1);
-			backdrop-filter: blur(10px);
-			padding: 30px;
-			border-radius: 15px;
-			color: #fff;
-		}
-		
-		.social-icons a {
-			color: #ffd700;
-			font-size: 2em;
-			margin: 0 10px;
-			transition: transform 0.3s;
-			display: inline-block;
-		}
-		
-		.social-icons a:hover {
-			transform: translateY(-5px);
-		}
-		
-		.copyable {
-			cursor: pointer;
-			padding: 10px;
-			background: rgba(255, 255, 255, 0.2);
-			border-radius: 5px;
-			margin: 10px 0;
-		}
-		
-		.copyable:hover {
-			background: rgba(255, 255, 255, 0.3);
-		}
-		
-		/* Fix for fullPage sections */
-		.section {
-			text-align: left;
-		}
-		
-		/* Responsive fixes */
-		@media (max-width: 768px) {
-			.namecard {
-				padding: 20px;
-			}
-			
-			.namecard h1 {
-				font-size: 1.8em;
-			}
-		}
-	</style>
-	<!-- Add this CSS to fix the namecard appearance immediately -->
-	<!-- Your JavaScript files -->
-	<script src="js/profile.js" type="text/javascript"></script>
-	<script src="js/particles.js" type="text/javascript"></script>
-	
-	<!-- Initialize fullPage.js -->
-	<script>
-		$(document).ready(function() {
-			$('#fullpage').fullpage({
-				anchors: ['home', 'about', 'portfolio', 'contact'],
-				navigation: true,
-				navigationPosition: 'right',
-				responsiveWidth: 768,
-				afterResponsive: function(isResponsive) {}
-			});
-		});
-
-		// Copy email function
-		function copyToClipboard(elementId) {
-			var text = $(elementId).text();
-			navigator.clipboard.writeText(text).then(function() {
-				$('#copymsg').text('Copied!');
-				setTimeout(function() {
-					$('#copymsg').text('Click to copy');
-				}, 2000);
-			});
-		}
-	</script> 
 </body>
 </html>
