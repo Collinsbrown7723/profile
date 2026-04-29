@@ -1,538 +1,138 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fortress Digital Technology | Engineering The Future</title>
+<!-- Modern Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+    /* =========================================================
+       1. PREMIUM CSS VARIABLES 
+       ========================================================= */
+    :root {
+        --bg-dark: #060b14;
+        --bg-card: rgba(15, 23, 42, 0.7);
+        --primary-glow: #3b82f6;
+        --accent-cyan: #06b6d4;
+        --text-main: #f8fafc;
+        --text-muted: #94a3b8;
+        --glass-border: rgba(255, 255, 255, 0.08);
+        --font-heading: 'Space Grotesk', sans-serif;
+        --font-body: 'Outfit', sans-serif;
+        --transition-smooth: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    /* =========================================================
+       2. GLOBAL RESET & BASE STYLES
+       ========================================================= */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: var(--font-body);
+        background-color: var(--bg-dark);
+        color: var(--text-main);
+        line-height: 1.7;
+        overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; }
     
-    <!-- Modern Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    
-    <style>
-        /* =========================================================
-           1. PREMIUM CSS VARIABLES 
-           ========================================================= */
-        :root {
-            --bg-dark: #060b14;
-            --bg-card: rgba(15, 23, 42, 0.7);
-            --primary-glow: #3b82f6;
-            --accent-cyan: #06b6d4;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --font-heading: 'Space Grotesk', sans-serif;
-            --font-body: 'Outfit', sans-serif;
-            --transition-smooth: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: var(--bg-dark); }
+    ::-webkit-scrollbar-thumb { background: var(--primary-glow); border-radius: 5px; }
 
-        /* =========================================================
-           2. GLOBAL RESET & BASE STYLES
-           ========================================================= */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+    /* =========================================================
+       3. GLASSMORPHISM NAVIGATION
+       ========================================================= */
+    header {
+        position: fixed;
+        width: 10%;
+        top: 0;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.2rem 5%;
+        background: rgba(6, 11, 20, 0.6);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--glass-border);
+        transition: var(--transition-smooth);
+    }
 
-        body {
-            font-family: var(--font-body);
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        a { text-decoration: none; color: inherit; }
-        
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 10px; }
-        ::-webkit-scrollbar-track { background: var(--bg-dark); }
-        ::-webkit-scrollbar-thumb { background: var(--primary-glow); border-radius: 5px; }
-
-        /* =========================================================
-           3. GLASSMORPHISM NAVIGATION
-           ========================================================= */
-        header {
-            position: fixed;
-            width: 100%; /* Corrected: Header should span full width */
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 5%; /* Adjusted padding for a better look */
-            background: rgba(6, 11, 20, 0.6);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--glass-border);
-            transition: var(--transition-smooth);
-        }
-
-        header.scrolled {
-            padding: 0.7rem 5%; /* Slightly less padding when scrolled */
-            background: rgba(6, 11, 20, 0.9);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        .logo {
-            display: flex; /* Allow image and text to sit side-by-side if text is added */
-            align-items: center;
-        }
-
-        .logo img {
-            width: auto; /* Allow image to scale */
-            max-width: 150px; /* Set a max-width for the logo */
-            height: auto;
-            margin-right: 10px; /* Space between logo and text if both are present */
-        }
-        
-        /* If you prefer text for the logo, use this */
-        .logo h1 {
-            font-family: var(--font-heading);
-            font-size: 1.8rem; /* Adjusted font size for logo text */
-            margin: 0; /* Remove default margin */
-            line-height: 1; /* Adjust line height */
-        }
-
-        .logo span {
-            color: var(--accent-cyan);
-            text-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2.5rem;
-            align-items: center;
-        }
-
-        nav ul li a {
-            font-weight: 600;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: var(--transition-smooth);
-            position: relative;
-        }
-
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background: var(--accent-cyan);
-            transition: var(--transition-smooth);
-        }
-
-        nav ul li a:hover::after { width: 100%; }
-        nav ul li a:hover { color: var(--accent-cyan); }
-
-        .btn-nav {
-            background: linear-gradient(45deg, var(--primary-glow), var(--accent-cyan));
-            color: white !important;
-            padding: 0.7rem 1.5rem;
-            border-radius: 30px;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
-            border: none;
-        }
-
-        .btn-nav::after { display: none; }
-        .btn-nav:hover {
-            box-shadow: 0 6px 25px rgba(6, 182, 212, 0.6);
-            transform: translateY(-2px);
-        }
-
-        /* Mobile Menu Button */
-        .mobile-menu-btn {
-            display: none;
-            font-size: 2rem;
-            background: none;
-            border: none;
-            color: var(--text-main);
-            cursor: pointer;
-            z-index: 1001; /* Ensure button is above menu on mobile */
-        }
-
-        /* =========================================================
-           4. HERO SECTION (Cinematic & Glowing)
-           ========================================================= */
-        #hero {
-            position: relative;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 0 5%;
-            overflow: hidden;
-        }
-
-        /* Hero Background with Overlay */
-        #hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(to bottom, rgba(6, 11, 20, 0.7) 0%, var(--bg-dark) 100%), 
-                        url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80') center/cover;
-            background-attachment: fixed; /* Added for parallax effect */
-            z-index: -1;
-            animation: pulseBg 10s infinite alternate;
-        }
-
-        @keyframes pulseBg {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.05); }
-        }
-
-        .hero-content {
-            max-width: 900px;
-            z-index: 1;
-        }
-
-        .hero-content h1 {
-            font-family: var(--font-heading);
-            font-size: 4.5rem;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(to right, #ffffff, var(--accent-cyan));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 40px rgba(6, 182, 212, 0.3);
-        }
-
-        .hero-content p {
-            font-size: 1.3rem;
-            color: var(--text-muted);
-            margin-bottom: 3rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .btn-main {
-            display: inline-block;
-            background: linear-gradient(45deg, var(--primary-glow), var(--accent-cyan));
-            color: white;
-            padding: 1.2rem 2.5rem;
-            font-size: 1.1rem;
-            font-family: var(--font-heading);
-            border-radius: 5px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: var(--transition-smooth);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-main:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 10px 30px rgba(6, 182, 212, 0.5);
-        }
-
-        /* =========================================================
-           5. SCROLL ANIMATIONS (Intersection Observer)
-           ========================================================= */
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* =========================================================
-           6. SECTIONS (About, Services, Book)
-           ========================================================= */
-        section { padding: 8rem 5%; }
-        
-        .section-title {
-            text-align: center;
-            font-family: var(--font-heading);
-            font-size: 3rem;
-            margin-bottom: 4rem;
-            color: var(--text-main);
-        }
-
-        .section-title span {
-            color: var(--accent-cyan);
-        }
-
-        /* About Grid */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            background: var(--bg-card);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: 4rem;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-        }
-
-        .about-text h3 {
-            font-family: var(--font-heading);
-            font-size: 2.2rem;
-            margin-bottom: 1.5rem;
-            color: var(--accent-cyan);
-        }
-
-        .about-text p {
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-        }
-
-        .about-image {
-            position: relative;
-        }
-
-        .about-image img {
-            width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            transition: var(--transition-smooth);
-        }
-
-        .about-image img:hover {
-            transform: scale(1.03);
-            box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
-        }
-
-        /* Services Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .service-card {
-            background: var(--bg-card);
-            border: 1px solid var(--glass-border);
-            border-radius: 15px;
-            overflow: hidden;
-            transition: var(--transition-smooth);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent-cyan);
-            box-shadow: 0 15px 35px rgba(6, 182, 212, 0.2);
-        }
-
-        .service-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-bottom: 2px solid var(--primary-glow);
-        }
-
-        .service-content {
-            padding: 2rem;
-            text-align: left;
-        }
-
-        .service-content h3 {
-            font-family: var(--font-heading);
-            font-size: 1.4rem;
-            color: var(--text-main);
-            margin-bottom: 1rem;
-        }
-
-        .service-content p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* =========================================================
-           7. HIGH-END BOOKING FORM 
-           ========================================================= */
-        #book {
-            background: linear-gradient(to bottom, var(--bg-dark), rgba(15, 23, 42, 0.8));
-            position: relative;
-        }
-
-        .form-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: rgba(15, 23, 42, 0.6);
-            backdrop-filter: blur(10px);
-            padding: 4rem;
-            border-radius: 20px;
-            border: 1px solid var(--glass-border);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
-        }
-
-        .form-group {
-            margin-bottom: 2rem;
-            position: relative;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.8rem;
-            font-weight: 600;
-            color: var(--accent-cyan);
-            font-family: var(--font-heading);
-            letter-spacing: 1px;
-        }
-
-        .form-group input, 
-        .form-group select, 
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem 1.5rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            font-family: var(--font-body);
-            color: white;
-            font-size: 1.1rem;
-            transition: var(--transition-smooth);
-        }
-
-        .form-group input:focus, 
-        .form-group select:focus, 
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent-cyan);
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 0 15px rgba(6, 182, 212, 0.3);
-        }
-
-        /* Target the placeholder text */
-        ::placeholder { color: rgba(255,255,255,0.3); }
-
-        /* Make Select Dropdown Options readable */
-        option { background: var(--bg-dark); color: white; }
-
-        .form-group textarea {
-            height: 180px;
-            resize: vertical;
-        }
-
-        .btn-submit {
-            width: 100%;
-            background: linear-gradient(45deg, var(--primary-glow), var(--accent-cyan));
-            color: white;
-            padding: 1.2rem;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.2rem;
-            font-family: var(--font-heading);
-            font-weight: bold;
-            cursor: pointer;
-            transition: var(--transition-smooth);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .btn-submit:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(6, 182, 212, 0.5);
-        }
-
-        /* =========================================================
-           8. FOOTER
-           ========================================================= */
-        footer {
-            background: #03060a;
-            color: var(--text-muted);
-            text-align: center;
-            padding: 3rem 5%;
-            border-top: 1px solid var(--glass-border);
-        }
-
-        footer p { margin-bottom: 0.5rem; }
-        footer span { color: var(--accent-cyan); font-weight: bold; }
-
-        /* =========================================================
-           9. MOBILE RESPONSIVENESS
-           ========================================================= */
-        @media (max-width: 998px) {
-            .hero-content h1 { font-size: 3.5rem; }
-            .about-grid { grid-template-columns: 1fr; padding: 2rem; }
-            .form-container { padding: 2rem; }
-            header {
-                padding: 0.8rem 5%; /* Adjust header padding for tablets */
-            }
-            .logo img {
-                max-width: 120px; /* Smaller logo on tablets */
-            }
-            .logo h1 {
-                font-size: 1.5rem; /* Smaller logo text on tablets */
-            }
-            nav ul {
-                gap: 1.8rem; /* Reduce gap on smaller screens */
-            }
-        }
-
-        @media (max-width: 768px) {
-            .mobile-menu-btn { display: block; }
-            nav ul {
-                position: absolute;
-                top: calc(100% - 1px); /* Corrected: Align with header bottom, accounting for border */
-                left: 0;
-                width: 100%;
-                background: rgba(6, 11, 20, 0.95);
-                backdrop-filter: blur(10px);
-                flex-direction: column;
-                padding: 2rem 0;
-                gap: 1.5rem;
-                border-top: 1px solid var(--glass-border);
-                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); /* Hidden by default */
-                transition: clip-path 0.4s ease-in-out;
-            }
-            nav ul.show {
-                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            }
-            .hero-content h1 { font-size: 2.5rem; }
-            .hero-content p { font-size: 1.1rem; }
-            .section-title { font-size: 2.2rem; }
-            .about-text h3 { font-size: 1.8rem; }
-            .about-text p { font-size: 1rem; }
-            .service-content h3 { font-size: 1.2rem; }
-        }
-
-        @media (max-width: 480px) {
-            .hero-content h1 { font-size: 2rem; margin-bottom: 1rem; }
-            .hero-content p { font-size: 0.95rem; margin-bottom: 2rem; }
-            .btn-main { padding: 1rem 2rem; font-size: 1rem; }
-            .section-title { font-size: 1.8rem; margin-bottom: 3rem; }
-            .about-grid { padding: 1.5rem; gap: 2rem; }
-            .form-container { padding: 1.5rem; }
-            .form-group label { font-size: 0.9rem; }
-            .form-group input, .form-group select, .form-group textarea { padding: 0.8rem 1rem; font-size: 1rem; }
-            .btn-submit { padding: 1rem; font-size: 1rem; }
-            .logo img {
-                max-width: 100px; /* Even smaller logo on phones */
-            }
-            .logo h1 {
-                font-size: 1.3rem; /* Even smaller logo text on phones */
-            }
-            header {
-                padding: 0.6rem 5%; /* Even less header padding on phones */
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Header / Navigation -->
-    <header id="header">
-        <div class="logo">
-            <!-- Consider using an <h1> for SEO and semantic structure if your logo is text-based -->
-            <!-- If you have an image logo, keep the img tag and ensure the alt text is descriptive -->
-            <img src="logo.png" alt="Fortress Digital Technology Logo">
-            <!-- If your logo is text and
+    header.scrolled {
+        padding: 0.8rem 5%;
+        background: rgba(6, 11, 20, 0.9);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    }
