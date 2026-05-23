@@ -1,15 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Fortress Digital | Engineering the Future with AI & Telecom</title>
+    <title>Fortress Digital Technology | Boot Camp</title>
     
-    <!-- Google Fonts + Font Awesome 6 (Free) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Syne:wght@600;800&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -183,18 +182,19 @@
             background: rgba(0, 240, 255, 0.15);
             border: 1px solid rgba(0,240,255,0.4);
             border-radius: 100px;
-            padding: 0.4rem 1rem;
+            padding: 0.5rem 1.2rem;
             display: inline-block;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             font-weight: 600;
             letter-spacing: 1px;
             margin-bottom: 2rem;
             backdrop-filter: blur(4px);
+            color: var(--neon-cyan);
         }
 
         .hero h1 {
             font-family: 'Syne', sans-serif;
-            font-size: 5rem;
+            font-size: 4.5rem;
             font-weight: 800;
             line-height: 1.1;
             background: linear-gradient(to right, #ffffff, var(--neon-cyan), #a78bfa);
@@ -208,7 +208,15 @@
             font-size: 1.2rem;
             color: var(--text-dim);
             max-width: 650px;
-            margin: 0 auto 2rem;
+            margin: 0 auto 1rem;
+        }
+        
+        .hero-highlight {
+            font-weight: 600;
+            color: #fff;
+            background: rgba(139, 92, 246, 0.2);
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
         }
 
         .hero-buttons {
@@ -216,6 +224,7 @@
             gap: 1.2rem;
             justify-content: center;
             flex-wrap: wrap;
+            margin-top: 2.5rem;
         }
 
         .btn-primary {
@@ -229,6 +238,9 @@
             border: none;
             font-size: 1rem;
             box-shadow: 0 5px 15px rgba(0,240,255,0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .btn-secondary {
@@ -240,6 +252,9 @@
             text-decoration: none;
             color: var(--neon-cyan);
             transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .btn-primary:hover {
@@ -272,38 +287,6 @@
             text-shadow: 0 0 5px rgba(0,240,255,0.5);
         }
 
-        /* about modern grid */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            border-radius: 2rem;
-            padding: 3rem;
-            border: 1px solid var(--glass-border);
-        }
-
-        .about-stats {
-            display: flex;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .stat {
-            background: rgba(0,0,0,0.5);
-            padding: 1rem;
-            border-radius: 1rem;
-            text-align: center;
-            flex: 1;
-            border-left: 3px solid var(--neon-cyan);
-        }
-
-        .stat h4 {
-            font-size: 2rem;
-            color: var(--neon-cyan);
-        }
-
         /* service cards premium */
         .services-grid {
             display: grid;
@@ -319,6 +302,7 @@
             padding: 2rem;
             transition: var(--transition);
             border: 1px solid rgba(0,240,255,0.2);
+            text-align: center;
         }
 
         .service-card:hover {
@@ -336,56 +320,7 @@
         .service-card h3 {
             font-size: 1.6rem;
             margin-bottom: 1rem;
-        }
-
-        /* work order form - elevated */
-        .form-wrapper {
-            background: radial-gradient(circle at 10% 30%, rgba(0,240,255,0.08), transparent);
-            border-radius: 2.5rem;
-            padding: 3rem;
-            border: 1px solid rgba(0,240,255,0.3);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .input-group {
-            margin-bottom: 1.8rem;
-        }
-
-        .input-group label {
-            display: block;
-            margin-bottom: 0.6rem;
-            font-weight: 600;
-            color: var(--neon-cyan);
-        }
-
-        .input-group input, .input-group select, .input-group textarea {
-            width: 100%;
-            padding: 1rem 1.2rem;
-            background: rgba(0,0,0,0.5);
-            border: 1px solid rgba(255,255,255,0.15);
-            border-radius: 1.2rem;
-            color: white;
-            font-size: 1rem;
-            transition: 0.2s;
-        }
-
-        .input-group input:focus, .input-group select:focus, .input-group textarea:focus {
-            outline: none;
-            border-color: var(--neon-cyan);
-            box-shadow: 0 0 12px rgba(0,240,255,0.3);
-        }
-
-        button[type="submit"] {
-            background: linear-gradient(95deg, #00f0ff, #3b82f6);
-            width: 100%;
-            padding: 1rem;
-            border: none;
-            border-radius: 2rem;
-            font-weight: 800;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: 0.2s;
+            color: #fff;
         }
 
         /* footer */
@@ -440,10 +375,6 @@
             .hero h1 {
                 font-size: 2.8rem;
             }
-            .about-grid {
-                grid-template-columns: 1fr;
-                padding: 1.5rem;
-            }
             .section-title {
                 font-size: 2.2rem;
             }
@@ -458,36 +389,69 @@
 
 <div class="bg-orb"></div>
 
-<!-- MODERN NAVIGATION BAR (COMPLETE REDESIGN) -->
 <nav class="navbar" id="navbar">
-        <ul class="nav-links" id="navLinks">
+    <ul class="nav-links" id="navLinks">
         <li><a href="/index.html">HOME</a></li>
-        <!-- <li><a href="/index.html/about">STORY</a></li>
-        <li><a href="#services">CAPABILITIES</a></li>
-        <li><a href="#workorder" class="nav-cta"><i class="fas fa-rocket"></i>Work Request</a></li> -->
+        <li><a href="#curriculum">CURRICULUM</a></li>
+        <li><a href="#enroll" class="nav-cta"><i class="fas fa-rocket"></i> Enroll Now</a></li>
     </ul>
     <div class="logo">
-        <i class="fas fa-shield-halos logo-icon"></i>
-        <span class="logo-text">FORTRESS<span style="color:white"> Digital Security</span></span>
+        <i class="fas fa-chess-rook logo-icon"></i>
+        <span class="logo-text">FORTRESS<span style="color:white"> Digital Tech</span></span>
     </div>
 
     <button class="menu-btn" id="menuToggle"><i class="fas fa-bars"></i></button>
 </nav>
 
-<!-- HERO / HOME SECTION -->
 <section id="home" class="hero">
     <div class="hero-content reveal">
-        <!--  text goes here-->
+        <div class="hero-badge"><i class="fas fa-calendar-alt"></i> Boot Camp Starts 1st of Next Month</div>
+        
+        <h1>Learn Web Dev, Python & <br><span>Advanced Computer Skills</span></h1>
+        
+        <p>Master the digital tools of the future in an immersive learning environment.</p>
+        
+        <p style="margin-top: 1.5rem;">
+            <span class="hero-highlight"><i class="fas fa-globe"></i> Format:</span> Online & In-Person &nbsp;&nbsp;|&nbsp;&nbsp; 
+            <span class="hero-highlight"><i class="fas fa-clock"></i> Duration:</span> 8 Weeks
+        </p>
+
+        <p style="color: var(--neon-cyan); font-weight: 600; font-size: 1rem; margin-top: 1rem;">
+            <i class="fas fa-exclamation-circle"></i> Limited Seats Available!
+        </p>
+
+        <div class="hero-buttons">
+            <a href="mailto:3collinsbrown7723@gmail.com" class="btn-primary"><i class="fas fa-laptop-code"></i> Secure Your Seat</a>
+            <a href="https://wa.me/233545103177" class="btn-secondary" target="_blank"><i class="fab fa-whatsapp"></i> Contact via WhatsApp</a>
+        </div>
     </div>
 </section>
 
+<section id="curriculum">
+    <h2 class="section-title">Boot Camp <span>Curriculum</span></h2>
+    <div class="services-grid reveal">
+        <div class="service-card">
+            <i class="fas fa-code service-icon"></i>
+            <h3>Web Development</h3>
+            <p>Learn to design and build responsive, modern websites from scratch using the latest web technologies and frameworks.</p>
+        </div>
+        <div class="service-card">
+            <i class="fab fa-python service-icon"></i>
+            <h3>Python Programming</h3>
+            <p>Master one of the most versatile languages in the industry, perfect for automation, data analysis, and backend development.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-microchip service-icon"></i>
+            <h3>Advanced Computing</h3>
+            <p>Elevate your technical proficiency with in-depth knowledge of operating systems, hardware architecture, and essential IT skills.</p>
+        </div>
+    </div>
+</section>
 
-
-<!-- FOOTER -->
 <footer>
     <div style="margin-bottom: 1rem;">
-        <i class="fas fa-shield-halos" style="font-size: 2rem; color: cyan;"></i>
-        <p style="margin-top: 1rem;">&copy; 2026 <strong style="color:cyan;">Fortress Digital Technology</strong> | Engineering The Unbreakable</p>
+        <i class="fas fa-chess-rook" style="font-size: 2rem; color: cyan;"></i>
+        <p style="margin-top: 1rem;">&copy; 2026 <strong style="color:cyan;">Fortress Digital Technology</strong> | Engineering The Future</p>
         <p><i class="fas fa-envelope"></i> 3collinsbrown7723@gmail.com  |  <i class="fas fa-phone-alt"></i> +233 545103177</p>
         <div style="margin-top: 1rem; letter-spacing: 2px;">
             <i class="fab fa-linkedin"></i>  <i class="fab fa-github"></i>  <i class="fab fa-x-twitter"></i>
@@ -557,9 +521,7 @@
     }, { threshold: 0.1, rootMargin: "0px 0px -30px 0px" });
     reveals.forEach(el => observer.observe(el));
 
-    // LIVE YEAR UPDATE IN FOOTER? not needed but subtle
     console.log("⚡ Fortress Next-Gen Interface — Operational");
 </script>
 </body>
 </html>
-```
