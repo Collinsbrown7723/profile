@@ -1,14 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Fortress Digital Technology | Boot Camp</title>
+    <title>Fortress Digital | Engineering the Future with AI & Telecom</title>
     
+    <!-- Google Fonts + Font Awesome 6 (Free) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Syne:wght@600;800&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -38,27 +39,7 @@
             line-height: 1.5;
         }
 
-        /* ========= ENGINEERING SCHEMATIC BACKGROUND ========= */
-        .engineering-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: var(--deep-space);
-            /* Technical Blueprint Grid */
-            background-image: 
-                linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(rgba(0, 240, 255, 0.08) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 240, 255, 0.08) 1px, transparent 1px);
-            /* Minor grid 20px, Major grid 100px */
-            background-size: 20px 20px, 20px 20px, 100px 100px, 100px 100px;
-            background-position: center center;
-            z-index: -3;
-        }
-
-        /* animated gradient orbs to complement the grid */
+        /* animated grid background */
         .bg-orb {
             position: fixed;
             top: 0;
@@ -202,19 +183,18 @@
             background: rgba(0, 240, 255, 0.15);
             border: 1px solid rgba(0,240,255,0.4);
             border-radius: 100px;
-            padding: 0.5rem 1.2rem;
+            padding: 0.4rem 1rem;
             display: inline-block;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             font-weight: 600;
             letter-spacing: 1px;
             margin-bottom: 2rem;
             backdrop-filter: blur(4px);
-            color: var(--neon-cyan);
         }
 
         .hero h1 {
             font-family: 'Syne', sans-serif;
-            font-size: 2rem;
+            font-size: 5rem;
             font-weight: 800;
             line-height: 1.1;
             background: linear-gradient(to right, #ffffff, var(--neon-cyan), #a78bfa);
@@ -228,84 +208,14 @@
             font-size: 1.2rem;
             color: var(--text-dim);
             max-width: 650px;
-            margin: 0 auto 1rem;
+            margin: 0 auto 2rem;
         }
-        
-        .hero-highlight {
-            font-weight: 600;
-            color: #fff;
-            background: rgba(139, 92, 246, 0.2);
-            padding: 0.2rem 0.6rem;
-            border-radius: 6px;
-        }
-
-        /* ========= ANIMATED COUNTDOWN CLOCK STYLES ========= */
-        .countdown-container {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin: 2.5rem 0 1.5rem 0;
-            flex-wrap: wrap;
-        }
-
-        .countdown-box {
-            background: rgba(10, 25, 47, 0.5);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 240, 255, 0.25);
-            border-radius: 16px;
-            padding: 1.2rem 1.5rem;
-            min-width: 100px;
-            box-shadow: 0 8px 32px 0 rgba(0, 240, 255, 0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            transition: var(--transition);
-        }
-
-        .countdown-box:hover {
-            border-color: var(--neon-cyan);
-            box-shadow: 0 8px 32px 0 rgba(0, 240, 255, 0.25);
-            transform: translateY(-3px);
-        }
-
-        .countdown-number {
-            font-family: 'Syne', sans-serif;
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: var(--neon-cyan);
-            line-height: 1;
-            text-shadow: 0 0 12px rgba(0, 240, 255, 0.3);
-            display: inline-block;
-        }
-
-        .countdown-label {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--text-white);
-            margin-top: 0.8rem;
-            font-weight: 600;
-            opacity: 0.8;
-        }
-
-        /* The Animation Keyframes */
-        @keyframes tickPulse {
-            0% { transform: scale(1); text-shadow: 0 0 12px rgba(0, 240, 255, 0.3); }
-            50% { transform: scale(1.15); color: #fff; text-shadow: 0 0 25px rgba(0, 240, 255, 0.9); }
-            100% { transform: scale(1); text-shadow: 0 0 12px rgba(0, 240, 255, 0.3); }
-        }
-
-        .animate-tick {
-            animation: tickPulse 0.3s ease-out;
-        }
-        /* =================================================== */
 
         .hero-buttons {
             display: flex;
             gap: 1.2rem;
             justify-content: center;
             flex-wrap: wrap;
-            margin-top: 2rem;
         }
 
         .btn-primary {
@@ -319,9 +229,6 @@
             border: none;
             font-size: 1rem;
             box-shadow: 0 5px 15px rgba(0,240,255,0.3);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
         }
 
         .btn-secondary {
@@ -333,11 +240,6 @@
             text-decoration: none;
             color: var(--neon-cyan);
             transition: 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(4px);
         }
 
         .btn-primary:hover {
@@ -346,7 +248,7 @@
         }
 
         .btn-secondary:hover {
-            background: rgba(0,240,255,0.2);
+            background: rgba(0,240,255,0.1);
             transform: translateY(-3px);
         }
 
@@ -370,6 +272,39 @@
             text-shadow: 0 0 5px rgba(0,240,255,0.5);
         }
 
+        /* about modern grid */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border-radius: 2rem;
+            padding: 3rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .about-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            background: rgba(0,0,0,0.5);
+            padding: 1rem;
+            border-radius: 1rem;
+            text-align: center;
+            flex: 1;
+            border-left: 3px solid var(--neon-cyan);
+        }
+
+        .stat h4 {
+            font-size: 2rem;
+            color: var(--neon-cyan);
+        }
+
+        /* service cards premium */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -384,7 +319,6 @@
             padding: 2rem;
             transition: var(--transition);
             border: 1px solid rgba(0,240,255,0.2);
-            text-align: center;
         }
 
         .service-card:hover {
@@ -402,19 +336,68 @@
         .service-card h3 {
             font-size: 1.6rem;
             margin-bottom: 1rem;
-            color: #fff;
         }
 
+        /* work order form - elevated */
+        .form-wrapper {
+            background: radial-gradient(circle at 10% 30%, rgba(0,240,255,0.08), transparent);
+            border-radius: 2.5rem;
+            padding: 3rem;
+            border: 1px solid rgba(0,240,255,0.3);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .input-group {
+            margin-bottom: 1.8rem;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 0.6rem;
+            font-weight: 600;
+            color: var(--neon-cyan);
+        }
+
+        .input-group input, .input-group select, .input-group textarea {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            background: rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 1.2rem;
+            color: white;
+            font-size: 1rem;
+            transition: 0.2s;
+        }
+
+        .input-group input:focus, .input-group select:focus, .input-group textarea:focus {
+            outline: none;
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 12px rgba(0,240,255,0.3);
+        }
+
+        button[type="submit"] {
+            background: linear-gradient(95deg, #00f0ff, #3b82f6);
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 2rem;
+            font-weight: 800;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        /* footer */
         footer {
             text-align: center;
             padding: 3rem;
             border-top: 1px solid rgba(0,240,255,0.2);
             background: #02040c;
             color: var(--text-dim);
-            position: relative;
-            z-index: 10;
         }
 
+        /* animation reveal */
         .reveal {
             opacity: 0;
             transform: translateY(35px);
@@ -426,6 +409,7 @@
             transform: translateY(0);
         }
 
+        /* responsive */
         @media (max-width: 900px) {
             .navbar {
                 width: 95%;
@@ -456,6 +440,10 @@
             .hero h1 {
                 font-size: 2.8rem;
             }
+            .about-grid {
+                grid-template-columns: 1fr;
+                padding: 1.5rem;
+            }
             .section-title {
                 font-size: 2.2rem;
             }
@@ -463,102 +451,166 @@
 
         @media (max-width: 550px) {
             .hero h1 { font-size: 2rem; }
-            .countdown-container { gap: 0.8rem; }
-            .countdown-box { padding: 0.8rem 1rem; min-width: 75px; border-radius: 12px; }
-            .countdown-number { font-size: 2rem; }
-            .countdown-label { font-size: 0.65rem; }
         }
     </style>
 </head>
 <body>
 
-<!-- Technical Engineering Background Elements -->
-<div class="engineering-bg"></div>
 <div class="bg-orb"></div>
 
+<!-- MODERN NAVIGATION BAR (COMPLETE REDESIGN) -->
 <nav class="navbar" id="navbar">
-    <ul class="nav-links" id="navLinks">
-        <li><a href="/index.html">HOME</a></li>
-        <li><a href="#curriculum">CURRICULUM</a></li>
-        <li><a href="#enroll" class="nav-cta"><i class="fas fa-rocket"></i> Enroll Now</a></li>
-    </ul>
     <div class="logo">
-        <i class="fas fa-chess-rook logo-icon"></i>
-        <span class="logo-text">FORTRESS<span style="color:white"> Digital Tech</span></span>
+        <i class="fas fa-shield-halos logo-icon"></i>
+        <span class="logo-text">FORTRESS<span style="color:white"> Digital Security</span></span>
     </div>
-
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#about">STORY</a></li>
+        <li><a href="#services">CAPABILITIES</a></li>
+        <li><a href="#workorder" class="nav-cta"><i class="fas fa-rocket"></i>Work Request</a></li>
+    </ul>
     <button class="menu-btn" id="menuToggle"><i class="fas fa-bars"></i></button>
 </nav>
 
+<!-- HERO / HOME SECTION -->
 <section id="home" class="hero">
     <div class="hero-content reveal">
-        <div class="hero-badge"><i class="fas fa-calendar-alt"></i> Boot Camp Starts June 1, 2026</div>
-        
-        <h1>Learn Web Dev, Python & <br><span>Advanced Computer Skills and Ethical Hacking </span></h1>
-        
-     
-        <p style="margin-top: 1.5rem;">
-            <span class="hero-highlight"><i class="fas fa-globe"></i> Format:</span> Online & In-Person &nbsp;&nbsp;|&nbsp;&nbsp; 
-            <span class="hero-highlight"><i class="fas fa-clock"></i> Duration:</span> 8 Weeks
-        </p>
-
-        <!-- ========= COUNTDOWN CLOCK HTML ========= -->
-        <div class="countdown-container">
-            <div class="countdown-box">
-                <span id="days" class="countdown-number">00</span>
-                <span class="countdown-label">Days</span>
-            </div>
-            <div class="countdown-box">
-                <span id="hours" class="countdown-number">00</span>
-                <span class="countdown-label">Hours</span>
-            </div>
-            <div class="countdown-box">
-                <span id="minutes" class="countdown-number">00</span>
-                <span class="countdown-label">Minutes</span>
-            </div>
-            <div class="countdown-box">
-                <span id="seconds" class="countdown-number">00</span>
-                <span class="countdown-label">Seconds</span>
-            </div>
+        <div class="hero-badge">
+            <i class="fas fa-microchip"></i> AI-INFUSED ENGINEERING
         </div>
-        <!-- ======================================== -->
-
-        <p style="color: var(--neon-cyan); font-weight: 600; font-size: 1rem; margin-top: 0.5rem;">
-            <i class="fas fa-exclamation-circle"></i> Still taking bookings!
-        </p>
-
+        <h1>Electrical Electronics & Telecom Engineer<br><span style="color:white">Collins Akayeti</span></h1>
+        <p>We build intelligent electrical grids, zero-trust networks, and AI-driven surveillance ecosystems. The future runs on Fortress.</p>
         <div class="hero-buttons">
-            <a href="mailto:3collinsbrown7723@gmail.com" class="btn-primary"><i class="fas fa-laptop-code"></i> Secure Your Seat</a>
-            <a href="https://wa.me/233545103177" class="btn-secondary" target="_blank"><i class="fab fa-whatsapp"></i> Contact via WhatsApp</a>
+            <a href="#workorder" class="btn-primary"><i class="fas fa-paper-plane"></i> Request a Service Work Order</a>
+            <a href="#about" class="btn-secondary"><i class="fas fa-chevron-circle-down"></i> Explore Our Tech</a>
         </div>
     </div>
 </section>
 
-<section id="curriculum">
-    <h2 class="section-title">Boot Camp <span>Curriculum</span></h2>
-    <div class="services-grid reveal">
-        <div class="service-card">
-            <i class="fas fa-code service-icon"></i>
-            <h3>Web Development</h3>
-            <p>Learn to design and build responsive, modern websites from scratch using the latest web technologies and frameworks.</p>
+<!-- ABOUT SECTION (Enhanced) -->
+<section id="about">
+    <h2 class="section-title reveal">Digital <span>Fortress</span> Goals</h2>
+    <div class="about-grid reveal">
+        <div>
+            <h3 style="font-size: 2rem; margin-bottom: 1rem;">Certified <span style="color:cyan;">Electronics & Telecom Engineer</span></h3>
+            <p style="margin-bottom: 1.2rem;">With over a decade of field-hardened experience, 
+                Collins Akayeti leads a collective of cybersecurity specialists, software architects,
+                 and hardware integrators. We don't just install systems — we weaponize reliability.</p>
+            <p>From intelligent fiber optic meshes to self-healing electrical networks, our solutions are designed for mission-critical environments: smart cities, industrial IoT, and high-security facilities. Every project includes proactive threat modeling and red-team testing.</p>
+            <div class="about-stats">
+                <div class="stat"><h4>150+</h4><p>Projects Deployed</p></div>
+                <div class="stat"><h4>99.97%</h4><p>Network Uptime</p></div>
+                <div class="stat"><h4>24/7</h4><p>AI Monitoring</p></div>
+            </div>
         </div>
-        <div class="service-card">
-            <i class="fab fa-python service-icon"></i>
-            <h3>Python Programming</h3>
-            <p>Master one of the most versatile languages in the industry, perfect for automation, data analysis, and backend development.</p>
-        </div>
-        <div class="service-card">
-            <i class="fas fa-microchip service-icon"></i>
-            <h3>Advanced Computing</h3>
-            <p>Elevate your technical proficiency with in-depth knowledge of operating systems, linux terminals & tools</p>
+        <div>
+            <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?auto=format&fit=crop&w=800&q=80" alt="Engineering Lab" style="width:100%; border-radius: 28px; box-shadow: 0 20px 30px -10px black; border: 1px solid cyan;">
         </div>
     </div>
 </section>
 
+<!-- SERVICES - CORE SPECIALIZATIONS (Better & fresher) -->
+<section id="services">
+    <h2 class="section-title reveal">Core <span>Superpowers</span></h2>
+    <div class="services-grid">
+        <div class="service-card reveal">
+                        <a href="softwareengineering.html">
+                            <div class="service-icon"><i class="fas fa-brain"></i></div>
+                        </a>
+                        
+            <h3>AI Software Engineering</h3>
+            <p>Custom LLM integration, predictive maintenance algorithms, and intelligent automation for industrial control systems.</p>
+        </div>
+        <div class="service-card reveal">
+                        <a href="fiber.html">
+                            <div class="service-icon"><i class="fas fa-network-wired"></i></div>
+                        </a>
+
+            <h3>Fiber Optic & Radio Networks</h3>
+            <p>Low-latency, redundant infrastructure with military-grade encryption — from 5G backhauls to long-range PtP links.</p>
+        </div>
+
+        <div class="service-card reveal">
+                        <a href="softwareengineering.html">
+                        <div class="service-icon"><i class="fas fa-eye"></i></div>
+                        </a>
+
+            <h3>Next-Gen Surveillance</h3>
+            <p>AI-driven CCTV, thermal imaging, LPR, and solar-powered autonomous security nodes. Remote command center ready.</p>
+        </div>
+        
+        <div class="service-card reveal">
+                        <a href="cyber.html">
+                        <div class="service-icon"><i class="fas fa-lock"></i></div>
+                        </a>
+
+            <h3>Zero Trust Cybersecurity</h3>
+            <p>Penetration testing, SOC-as-a-service, and hardware firewalls. We build fortresses around your digital assets.</p>
+        </div>
+        <div class="service-card reveal">
+                        <a href="electricfencing.html">
+                        <div class="service-icon"><i class="fas fa-charging-station"></i></div>
+                        </a>
+
+            <h3>Electric Fencing & Access</h3>
+            <p>High-voltage perimeter defense integrated with biometric access logs and real-time breach alerts.</p>
+        </div>
+        <div class="service-card reveal">
+                        <a href="cloudservices.html">
+                        <div class="service-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                        </a>
+
+            <h3>Cloud Infrastructure</h3>
+            <p>Hybrid cloud architecture, disaster recovery, and edge computing for real-time data processing.</p>
+        </div>
+    </div>
+</section>
+
+<!-- WORK ORDER SECTION (Sleek Form, better UX) -->
+<section id="workorder">
+    <h2 class="section-title reveal">Deploy <span>Strategic Order</span></h2>
+    <div class="form-wrapper reveal">
+        <form id="missionForm" action="https://formsubmit.co/4dcb3df2d4200bb685343f451045f96b" method="POST">
+            <input type="hidden" name="_subject" value="⚡ FORTRESS MISSION ORDER">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            
+            <div class="input-group">
+                <label><i class="fas fa-user-astronaut"></i> Full Name / Organization</label>
+                <input type="text" name="Client_Name" placeholder="e.g. Collins Akayeti / Stark Industries" required>
+            </div>
+            <div class="input-group">
+                <label><i class="fas fa-envelope"></i> Encrypted Comms</label>
+                <input type="email" name="Email_Address" placeholder="command@fortress.com" required>
+            </div>
+            <div class="input-group">
+                <label><i class="fas fa-cogs"></i> Service Required</label>
+                <select name="Service_Requested" required>
+                    <option value="" disabled selected>-- Select Capability --</option>
+                    <option>AI & Software Development</option>
+                    <option>Computer Networking / Fiber</option>
+                    <option>AI CCTV & Surveillance Suite</option>
+                    <option>Electric Fencing & Perimeter Security</option>
+                    <option>Intrusion Detection & Alarms</option>
+                    <option>Cybersecurity & Red Teaming</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label><i class="fas fa-clipboard-list"></i> Mission Brief</label>
+                <textarea name="Project_Details" rows="4" placeholder="Describe your infrastructure needs, timeline, and specific objectives..."></textarea>
+            </div>
+            <button type="submit"><i class="fas fa-satellite-dish"></i> Submit Encrypted Order</button>
+        </form>
+        <p style="margin-top: 1.5rem; text-align: center; font-size: 0.8rem; color: #5f7f9e;">🔒 End-to-end request | Activation link will be sent to your email (first submission)</p>
+    </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
     <div style="margin-bottom: 1rem;">
-        <i class="fas fa-chess-rook" style="font-size: 2rem; color: cyan;"></i>
-        <p style="margin-top: 1rem;">&copy; 2026 <strong style="color:cyan;">Fortress Digital Technology</strong> | Engineering The Future</p>
+        <i class="fas fa-shield-halos" style="font-size: 2rem; color: cyan;"></i>
+        <p style="margin-top: 1rem;">&copy; 2026 <strong style="color:cyan;">Fortress Digital Technology</strong> | Engineering The Unbreakable</p>
         <p><i class="fas fa-envelope"></i> 3collinsbrown7723@gmail.com  |  <i class="fas fa-phone-alt"></i> +233 545103177</p>
         <div style="margin-top: 1rem; letter-spacing: 2px;">
             <i class="fab fa-linkedin"></i>  <i class="fab fa-github"></i>  <i class="fab fa-x-twitter"></i>
@@ -601,6 +653,7 @@
         });
     });
 
+    // SMOOTH SCROLL WITH OFFSET FOR FIXED NAV
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -615,6 +668,7 @@
         });
     });
 
+    // REVEAL ANIMATION ON SCROLL (Intersection Observer)
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -626,48 +680,9 @@
     }, { threshold: 0.1, rootMargin: "0px 0px -30px 0px" });
     reveals.forEach(el => observer.observe(el));
 
-
-    // ========= ANIMATED COUNTDOWN CLOCK LOGIC =========
-    const countDownDate = new Date("June 1, 2026 00:00:00").getTime();
-    
-    // Helper function to animate numbers when they change
-    function updateAndAnimate(id, newValue) {
-        const element = document.getElementById(id);
-        if (element.innerHTML !== newValue) {
-            element.innerHTML = newValue;
-            
-            // Remove the class, trigger a reflow, and add it back to restart the CSS animation
-            element.classList.remove('animate-tick');
-            void element.offsetWidth; 
-            element.classList.add('animate-tick');
-        }
-    }
-
-    const countdownTimer = setInterval(function() {
-        const now = new Date().getTime();
-        const distance = countDownDate - now;
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        // Format to always show 2 digits and trigger the pop animation
-        updateAndAnimate("days", days.toString().padStart(2, '0'));
-        updateAndAnimate("hours", hours.toString().padStart(2, '0'));
-        updateAndAnimate("minutes", minutes.toString().padStart(2, '0'));
-        updateAndAnimate("seconds", seconds.toString().padStart(2, '0'));
-
-        if (distance < 0) {
-            clearInterval(countdownTimer);
-            document.getElementById("days").innerHTML = "00";
-            document.getElementById("hours").innerHTML = "00";
-            document.getElementById("minutes").innerHTML = "00";
-            document.getElementById("seconds").innerHTML = "00";
-        }
-    }, 1000);
-
+    // LIVE YEAR UPDATE IN FOOTER? not needed but subtle
     console.log("⚡ Fortress Next-Gen Interface — Operational");
 </script>
 </body>
 </html>
+```
