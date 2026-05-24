@@ -194,7 +194,7 @@
 
         .hero h1 {
             font-family: 'Syne', sans-serif;
-            font-size: 4.5rem;
+            font-size: 2.5rem;
             font-weight: 800;
             line-height: 1.1;
             background: linear-gradient(to right, #ffffff, var(--neon-cyan), #a78bfa);
@@ -219,12 +219,73 @@
             border-radius: 6px;
         }
 
+        /* ========= ANIMATED COUNTDOWN CLOCK STYLES ========= */
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2.5rem 0 1.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .countdown-box {
+            background: rgba(10, 25, 47, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 240, 255, 0.25);
+            border-radius: 16px;
+            padding: 1.2rem 1.5rem;
+            min-width: 100px;
+            box-shadow: 0 8px 32px 0 rgba(0, 240, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .countdown-box:hover {
+            border-color: var(--neon-cyan);
+            box-shadow: 0 8px 32px 0 rgba(0, 240, 255, 0.25);
+            transform: translateY(-3px);
+        }
+
+        .countdown-number {
+            font-family: 'Syne', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--neon-cyan);
+            line-height: 1;
+            text-shadow: 0 0 12px rgba(0, 240, 255, 0.3);
+            display: inline-block;
+        }
+
+        .countdown-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-white);
+            margin-top: 0.8rem;
+            font-weight: 600;
+            opacity: 0.8;
+        }
+
+        /* The Animation Keyframes */
+        @keyframes tickPulse {
+            0% { transform: scale(1); text-shadow: 0 0 12px rgba(0, 240, 255, 0.3); }
+            50% { transform: scale(1.15); color: #fff; text-shadow: 0 0 25px rgba(0, 240, 255, 0.9); }
+            100% { transform: scale(1); text-shadow: 0 0 12px rgba(0, 240, 255, 0.3); }
+        }
+
+        .animate-tick {
+            animation: tickPulse 0.3s ease-out;
+        }
+        /* =================================================== */
+
         .hero-buttons {
             display: flex;
             gap: 1.2rem;
             justify-content: center;
             flex-wrap: wrap;
-            margin-top: 2.5rem;
+            margin-top: 2rem;
         }
 
         .btn-primary {
@@ -287,7 +348,6 @@
             text-shadow: 0 0 5px rgba(0,240,255,0.5);
         }
 
-        /* service cards premium */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -323,7 +383,6 @@
             color: #fff;
         }
 
-        /* footer */
         footer {
             text-align: center;
             padding: 3rem;
@@ -332,7 +391,6 @@
             color: var(--text-dim);
         }
 
-        /* animation reveal */
         .reveal {
             opacity: 0;
             transform: translateY(35px);
@@ -344,7 +402,6 @@
             transform: translateY(0);
         }
 
-        /* responsive */
         @media (max-width: 900px) {
             .navbar {
                 width: 95%;
@@ -382,6 +439,10 @@
 
         @media (max-width: 550px) {
             .hero h1 { font-size: 2rem; }
+            .countdown-container { gap: 0.8rem; }
+            .countdown-box { padding: 0.8rem 1rem; min-width: 75px; border-radius: 12px; }
+            .countdown-number { font-size: 2rem; }
+            .countdown-label { font-size: 0.65rem; }
         }
     </style>
 </head>
@@ -405,19 +466,39 @@
 
 <section id="home" class="hero">
     <div class="hero-content reveal">
-        <div class="hero-badge"><i class="fas fa-calendar-alt"></i> Boot Camp Starts 1st of Next Month</div>
+        <div class="hero-badge"><i class="fas fa-calendar-alt"></i> Boot Camp Starts June 1, 2026</div>
         
-        <h1>Learn Web Dev, Python & <br><span>Advanced Computer Skills</span></h1>
+        <h1>Learn Web Dev, Python & <br><span>Advanced Computer Skills and Ethical Hacking </span></h1>
         
-        <p>Master the digital tools of the future in an immersive learning environment.</p>
-        
+     
         <p style="margin-top: 1.5rem;">
             <span class="hero-highlight"><i class="fas fa-globe"></i> Format:</span> Online & In-Person &nbsp;&nbsp;|&nbsp;&nbsp; 
             <span class="hero-highlight"><i class="fas fa-clock"></i> Duration:</span> 8 Weeks
         </p>
 
-        <p style="color: var(--neon-cyan); font-weight: 600; font-size: 1rem; margin-top: 1rem;">
-            <i class="fas fa-exclamation-circle"></i> Limited Seats Available!
+        <!-- ========= COUNTDOWN CLOCK HTML ========= -->
+        <div class="countdown-container">
+            <div class="countdown-box">
+                <span id="days" class="countdown-number">00</span>
+                <span class="countdown-label">Days</span>
+            </div>
+            <div class="countdown-box">
+                <span id="hours" class="countdown-number">00</span>
+                <span class="countdown-label">Hours</span>
+            </div>
+            <div class="countdown-box">
+                <span id="minutes" class="countdown-number">00</span>
+                <span class="countdown-label">Minutes</span>
+            </div>
+            <div class="countdown-box">
+                <span id="seconds" class="countdown-number">00</span>
+                <span class="countdown-label">Seconds</span>
+            </div>
+        </div>
+        <!-- ======================================== -->
+
+        <p style="color: var(--neon-cyan); font-weight: 600; font-size: 1rem; margin-top: 0.5rem;">
+            <i class="fas fa-exclamation-circle"></i>Still taking bookings!
         </p>
 
         <div class="hero-buttons">
@@ -443,7 +524,7 @@
         <div class="service-card">
             <i class="fas fa-microchip service-icon"></i>
             <h3>Advanced Computing</h3>
-            <p>Elevate your technical proficiency with in-depth knowledge of operating systems, hardware architecture, and essential IT skills.</p>
+            <p>Elevate your technical proficiency with in-depth knowledge of operating systems, linux terminals & tools</p>
         </div>
     </div>
 </section>
@@ -494,7 +575,6 @@
         });
     });
 
-    // SMOOTH SCROLL WITH OFFSET FOR FIXED NAV
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -509,7 +589,6 @@
         });
     });
 
-    // REVEAL ANIMATION ON SCROLL (Intersection Observer)
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -520,6 +599,47 @@
         });
     }, { threshold: 0.1, rootMargin: "0px 0px -30px 0px" });
     reveals.forEach(el => observer.observe(el));
+
+
+    // ========= ANIMATED COUNTDOWN CLOCK LOGIC =========
+    const countDownDate = new Date("June 1, 2026 00:00:00").getTime();
+    
+    // Helper function to animate numbers when they change
+    function updateAndAnimate(id, newValue) {
+        const element = document.getElementById(id);
+        if (element.innerHTML !== newValue) {
+            element.innerHTML = newValue;
+            
+            // Remove the class, trigger a reflow, and add it back to restart the CSS animation
+            element.classList.remove('animate-tick');
+            void element.offsetWidth; 
+            element.classList.add('animate-tick');
+        }
+    }
+
+    const countdownTimer = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = countDownDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Format to always show 2 digits and trigger the pop animation
+        updateAndAnimate("days", days.toString().padStart(2, '0'));
+        updateAndAnimate("hours", hours.toString().padStart(2, '0'));
+        updateAndAnimate("minutes", minutes.toString().padStart(2, '0'));
+        updateAndAnimate("seconds", seconds.toString().padStart(2, '0'));
+
+        if (distance < 0) {
+            clearInterval(countdownTimer);
+            document.getElementById("days").innerHTML = "00";
+            document.getElementById("hours").innerHTML = "00";
+            document.getElementById("minutes").innerHTML = "00";
+            document.getElementById("seconds").innerHTML = "00";
+        }
+    }, 1000);
 
     console.log("⚡ Fortress Next-Gen Interface — Operational");
 </script>
